@@ -2,6 +2,7 @@ import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
 import createHistory from 'history/createBrowserHistory'
 import { routerMiddleware, routerReducer } from 'react-router-redux'
 import thunkMiddleware from 'redux-thunk'
+import { reducer as reduxFormReducer } from 'redux-form';
 import * as reducers from '../reducers'
 
 const storeEnhancers = [
@@ -21,6 +22,7 @@ const createStoreWithMiddleware = compose(
 )(createStore)
 
 const reducer = combineReducers({
+  form: reduxFormReducer,
   ...reducers,
   routing: routerReducer
 })
