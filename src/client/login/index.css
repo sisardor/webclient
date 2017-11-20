@@ -1,0 +1,110 @@
+ .login div#header {
+  height: 180px;
+  margin: 0 auto;
+  padding-top: 90px;
+  width: 330px;
+
+
+}
+.login div#header h1 {
+  float: none;
+  height: 45px;
+  margin: 0 auto;
+  width: 109px;
+}
+.login div#main-body form {
+    padding: 14px;
+}
+
+.login div#main-body  {
+    /* background: #f2f6f9; */
+    background: linear-gradient(#fff,#f2f6f9);
+    border-radius: 6px;
+    -ms-box-shadow: 0 0 0 1px rgba(14,41,57,.12),0 2px 5px rgba(14,41,57,.44),inset 0 -1px 2px rgba(14,41,57,.15);
+    -o-box-shadow: 0 0 0 1px rgba(14,41,57,.12),0 2px 5px rgba(14,41,57,.44),inset 0 -1px 2px rgba(14,41,57,.15);
+    box-shadow: 0 0 0 1px rgba(14,41,57,.12), 0 2px 5px rgba(14,41,57,.44), inset 0 -1px 2px rgba(14,41,57,.15);
+    background-color: none;
+}
+
+.login div.box {
+    width: 330px;
+}
+
+.login label {
+    display: none!important;
+}
+.login p.remember label {
+    display: inline!important;
+}
+
+
+.login div#main-body form p a.button,
+.login div#main-body form p button.button{
+    box-sizing: border-box;
+    text-align: center;
+    height: 44px;
+    width: 302px;
+    border-radius: 6px;
+    -ms-box-shadow: 0 1px 1px rgba(0,0,0,.16);
+    -o-box-shadow: 0 1px 1px rgba(0,0,0,.16);
+    box-shadow: 0 1px 1px rgba(0,0,0,.16);
+}
+.login div#main-body form p a.button span,
+.login div#main-body form p button.button span{
+    height: 42px;
+    padding: 13px 0 0;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 14px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.53);
+}
+.login div#main-body form p {
+   margin-bottom: 14px;
+}
+
+.login div#main-body form p.remember{
+    padding: 5px 0;
+    color: #777;
+    font-size: 12px;
+    line-height: 12px;
+    text-shadow: 0 1px 0 #fff;
+}
+.login div#main-body form p.remember input {
+    margin-right: 4px;
+    vertical-align: middle;
+}
+.login div#main-body form p.forgot {
+    float: right;
+    font-size: 12px;
+    line-height: 12px;
+    color: #777;
+    padding: 5px 0;
+}
+
+.login h2 {
+    font-family: Camphor,Segoe UI,Open Sans,sans-serif;
+    padding: 17px 24px;
+    background: url(divider.png) 50% 100% no-repeat;
+    color: #1e2b32;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    text-align: center;
+    margin-bottom: 17px;
+}
+
+.login div#main-body form p.text input {
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    width: 100%;
+    border-radius: 5px;
+    -ms-box-shadow: inset 0 1px 2px rgba(0,0,0,.18);
+    -o-box-shadow: inset 0 1px 2px rgba(0,0,0,.18);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.18);
+    -webkit-font-smoothing: antialiased;
+    border: 1px solid #bbb;
+    border-top-color: #999;
+    font-size: 18px;
+}
