@@ -19,7 +19,11 @@ class App extends Component {
             <NewComponent/>
           </div>
         </div>
-        <div id='footer'></div>
+        <div id='footer' className="box" >
+          <a href="/register">
+              Dont have an account? <span>Sign up</span>
+          </a>
+        </div>
       </div>
     );
   }

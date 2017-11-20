@@ -8,6 +8,7 @@ import configureStore from './store/configureStore'
 import './index.css';
 import App from './App';
 import Login from './client/login'
+import Register from './client/register'
 import registerServiceWorker from './registerServiceWorker';
 import { history } from './store/configureStore'
 
@@ -25,6 +26,7 @@ ReactDOM.render(
       <div className="flex-column flex-parent">
         <Route exact path='/' component={App}/>
         <Route path='/login' to='sessions/new' component={Login} />
+        <Route path='/register' to='sessions/new' component={Register} />
       </div>
     </ConnectedRouter>
   </Provider>
