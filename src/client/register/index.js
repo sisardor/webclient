@@ -22,8 +22,8 @@ class App extends Component {
                  <h2>Create your Stripe account.</h2>
             </div>
             <PasswordStrength/>
-            {/*<NewComponent/>*/}
-            <FieldLevelValidationForm onSubmit={showResults} />
+            <NewComponent/>
+            {/*<FieldLevelValidationForm onSubmit={showResults} />*/}
           </div>
         </div>
         <div id='footer'></div>
@@ -231,10 +231,30 @@ class NewComponent extends Component {
           </span>
         </p>
         <p className="text">
-          <span>
+          <span className="password-strength" data-password-strength="2">
             <label htmlFor="password">Password</label>
             <input type="password"  name="password" id="password" placeholder="Password" autoComplete="new-password" className="password-strength-input" />
-          </span>
+            <span className="password-strength-indicator">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            <span className="password-strength-popover" style={{display: 'block'}}>
+              <span className="password-strength-popover-status">That's alright.</span>
+              <span className="password-strength-popover-explanation">
+                <ul>
+                  <li class="invalid">At least 1 number (0-9)</li>
+                  <li class="invalid">At least 1 letter (a-z)</li>
+                  <li class="invalid">At least 1 uppser case (A-Z)</li>
+                  <li class="invalid">At least 8 characters</li>
+                  <li class="invalid">At least 1 special characters (-!$%#@&amp;*?)</li>
+                  <li class="valid">No spaces, forward slashes (/) or double quote marks (")</li>
+                </ul>
+                {/*Good passwords are hard to guess. Try using a multi-word phrase, uncommon words, numbers or symbols.*/}
+              </span>
+            </span>
+        </span>
         </p>
         <p className="text">
           <span>

@@ -1,0 +1,111 @@
+.login div#main-body form p span.password-strength {
+    position: relative;
+}
+
+.login div#main-body form p span.password-strength span.password-strength-popover {
+    position: absolute;
+    right: -250px;
+    top: -37px;
+    display: none;
+    padding: 12px 15px;
+    width: 230px;
+    border-radius: 5px;
+    -ms-box-shadow: 0 0 0 1px rgba(0,0,0,.06),0 8px 13px rgba(0,0,0,.36);
+    -o-box-shadow: 0 0 0 1px rgba(0,0,0,.06),0 8px 13px rgba(0,0,0,.36);
+    box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 8px 13px rgba(0,0,0,.36);
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #fff;
+}
+.login div#main-body form p span.password-strength input[type=password] {
+    padding-right: 25px;
+}
+.login div#main-body form p span.password-strength span.password-strength-popover:before {
+    left: -19px;
+    position: absolute;
+    top: 32px;
+    display: block;
+    height: 54px;
+    width: 19px;
+    background-image: url('arrow.png');
+    background-size: 19px 54px;
+    content: "";
+}
+.login div#main-body form p.text span {
+    display: block;
+}
+.login div#main-body form p span.password-strength span.password-strength-popover span {
+    color: #696f77;
+    font-family: Lucida Grande,Lucida Sans Unicode,Geneva,sans-serif;
+    font-size: 12px;
+    line-height: 17px;
+}
+
+.login div#main-body form p.text span {
+    display: block;
+}
+
+.login div#main-body form p span.password-strength span.password-strength-indicator {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 5px;
+    padding: 0 10px;
+}
+.login div#main-body form p span.password-strength[data-password-strength="1"] span.password-strength-indicator span+span+span+span {
+    background: #e01414;
+}
+.login div#main-body form p span.password-strength[data-password-strength="2"] span.password-strength-indicator span+span+span {
+    background: #e09115;
+}
+.login div#main-body form p span.password-strength[data-password-strength="3"] span.password-strength-indicator span+span {
+    background: #6ead09;
+}
+.login div#main-body form p span.password-strength[data-password-strength="4"] span.password-strength-indicator span {
+    background: #008cdd;
+}
+.login div#main-body form p span.password-strength span.password-strength-indicator span {
+    display: block;
+    height: 5px;
+    margin-bottom: 2px;
+    width: 5px;
+    border-radius: 5px;
+    background: #ebeef1;
+}
+.login div#main-body form p.text span {
+    display: block;
+}
+.password-strength-popover-explanation {
+  /*margin-left: 17px;*/
+}
+
+.password-strength-popover-explanation li.invalid:before {
+    content: "\d7";
+    color: #d40000;
+}
+
+
+
+.password-strength-popover-explanation li.invalid {
+    color: #d40000;
+}
+
+.password-strength-popover-explanation ul li {
+    background: none;
+    padding: 0 0 5px 18px;
+    line-height: 15px;
+    margin: 0;
+    list-style-type: none;
+    position: relative;
+}
+.password-strength-popover-explanation li:before {
+    content: "\2713";
+    font-size: 16px;
+}
+.password-strength-popover-explanation ul li:before {
+    position: absolute;
+    top: 0;
+    left: 1px;
+    /*font-size: 22px;*/
+}
