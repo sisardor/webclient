@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import './index.css'
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
@@ -20,9 +21,8 @@ class App extends Component {
           </div>
         </div>
         <div id='footer' className="box" >
-          <a href="/register">
-              Dont have an account? <span>Sign up</span>
-          </a>
+          <Link to={`/register`}>Dont have an account? <span>Sign up</span></Link>
+
         </div>
       </div>
     );
@@ -38,13 +38,13 @@ class NewComponent extends Component {
           <p className="text">
             <span>
               <label htmlFor="email"><span>Email</span></label>
-              <input type="email" name="email" id="email" placeholder="Email"  />
+              <input type="email" name="email" id="email" placeholder="Email" autoComplete="email"   />
             </span>
           </p>
           <p className="text">
             <span>
               <label htmlFor="password"><span>Password</span></label>
-              <input type="password" name="password" id="password" placeholder="Password"  />
+              <input type="password" name="password" id="password" autoComplete="current-password" placeholder="Password"  />
             </span>
           </p>
           <p className="forgot first-step"><a href="/reset"><span>Forgot your password?</span></a></p>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './index.css'
 import showResults from "./showResults";
 import FieldLevelValidationForm from "./FieldLevelValidationForm";
+
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
 
@@ -11,6 +12,9 @@ class App extends Component {
     fetch('api/Referrals')
   }
   render() {
+    //<PasswordStrength/>
+    //<FieldLevelValidationForm onSubmit={showResults} />
+    //<NewComponent/>
     return (
       <div className="login">
         <div id='header'>
@@ -21,9 +25,9 @@ class App extends Component {
             <div className="title extra">
                  <h2>Create your Stripe account.</h2>
             </div>
-            <PasswordStrength/>
-            <NewComponent/>
-            {/*<FieldLevelValidationForm onSubmit={showResults} />*/}
+
+
+            <FieldLevelValidationForm onSubmit={showResults} />
           </div>
         </div>
         <div id='footer'></div>
@@ -67,7 +71,7 @@ class RulesMeter extends React.Component {
             <div>
                 <span>{this.props.title}</span>
                 <div className="meter-wrapper">
-                   <div className={this.props.className} style={{}}></div>
+                   <div className={this.props.className} style={{width: this.props.meterWidth + '%'}}></div>
                 </div>
             </div>
         )
@@ -241,15 +245,15 @@ class NewComponent extends Component {
               <span></span>
             </span>
             <span className="password-strength-popover" style={{display: 'block'}}>
-              <span className="password-strength-popover-status">That's alright.</span>
+              <span className="password-strength-popover-status">Thats alright.</span>
               <span className="password-strength-popover-explanation">
                 <ul>
-                  <li class="invalid">At least 1 number (0-9)</li>
-                  <li class="invalid">At least 1 letter (a-z)</li>
-                  <li class="invalid">At least 1 uppser case (A-Z)</li>
-                  <li class="invalid">At least 8 characters</li>
-                  <li class="invalid">At least 1 special characters (-!$%#@&amp;*?)</li>
-                  <li class="valid">No spaces, forward slashes (/) or double quote marks (")</li>
+                  <li className="invalid">At least 1 number (0-9)</li>
+                  <li className="invalid">At least 1 letter (a-z)</li>
+                  <li className="invalid">At least 1 uppser case (A-Z)</li>
+                  <li className="invalid">At least 8 characters</li>
+                  <li className="invalid">At least 1 special characters (-!$%#@&amp;*?)</li>
+                  <li className="valid">No spaces, forward slashes (/) or double quote marks (")</li>
                 </ul>
                 {/*Good passwords are hard to guess. Try using a multi-word phrase, uncommon words, numbers or symbols.*/}
               </span>
