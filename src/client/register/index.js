@@ -30,8 +30,9 @@ class App extends Component {
         <div id='main-body' className="box">
           <div className="innter">
             <div className="title extra">
-                 <h2>Create your Stripe account.</h2>
+                 <h2>Create your Nettok account.</h2>
             </div>
+            <p className="danger-alert">{this.props.server_response}</p>
             <FieldLevelValidationForm onSubmit={this.onFormSubmit.bind(this)} />
           </div>
         </div>
@@ -114,7 +115,22 @@ class NewComponent extends Component {
 }
 
 function mapStateToProps(state, ownProps) {
-  return {}
+  console.log(state);
+  const { register: { error } } = state
+  let server_error = null
+  if (error) {
+    try {
+      if (error.hasOwnProperty('message') && typeof error.message === 'string')
+      server_error = 'Error - ' + error.message.substring(error.message.indexOf('Details:'))
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  console.log(server_error);
+  return {
+    server_response: server_error
+  }
 }
 function mapDispatchToProps (dispatch) {
   return {

@@ -4,6 +4,11 @@
 .login div#main-body form .g-recaptcha, .login div#main-body form #g-recaptcha {
     margin-bottom: 14px;
 }
+.danger-alert {
+  font-size: small;
+  color: red;
+  padding: 0 14px;
+}
 .login div#main-body form p span.password-strength span.password-strength-popover {
     position: absolute;
     right: -250px;

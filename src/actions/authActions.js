@@ -1,5 +1,5 @@
 import { Schema } from 'normalizr'
-import { ACTIONS_REQUEST } from '../constants/cons'
+import { ACTIONS_REQUEST, REGISTERATION_REQUEST, REGISTERATION_FAIL, REGISTERATION_SUCCESS } from '../constants/cons'
 import processResponse from '../utils/process-response'
 import config from 'clientconfig'
 // import series from 'run-series'
@@ -11,6 +11,9 @@ export function registerUser (options) {
 
   return (dispatch, getState) => {
     // const { user: { authKey }} = getState()
+    dispatch({
+      type: REGISTERATION_REQUEST
+    })
     fetch(endpoint, {
       method: 'POST',
       headers: {
@@ -23,12 +26,19 @@ export function registerUser (options) {
     .then(processResponse)
     .then(res => {
       // Add parameters to the new action.
-      console.log(res);
-
+      dispatch({
+        type: REGISTERATION_SUCCESS,
+        response: res
+      })
     })
     .catch(error => {
       // hendle error
       console.error(error);
+      dispatch({
+        type: REGISTERATION_FAIL,
+        response: {},
+        error
+      })
     })
   }
 }

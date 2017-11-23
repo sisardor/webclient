@@ -20,7 +20,7 @@ const hasNumber = value => value && value.match(/\d/) !== null ? undefined : "At
 const hasLetter = value => value && value.match(/[a-z]/) !== null ? undefined : "At least 1 letter (a-z)"
 const hasUpperLetter = value => value && value.match(/[A-Z]/) !== null  ? undefined : "At least 1 uppser case (A-Z)"
 const isValidLength = value => value && value.match(/^.{8,}$/) !== null  ? undefined : "At least 8 characters"
-const oneSpecialChar = value => value && value.match(/[-!$%#@&*?]/) !== null  ? undefined : "At least 1 special characters (-!$%#@&*?)"
+const oneSpecialChar = value => value && value.match(/[-=!$%#@&*?]/) !== null  ? undefined : "At least 1 special characters (-=!$%#@&*?)"
 const noSpecialChar = value => value && value.match(/[ \/"]/) === null  ? undefined : "No spaces, forward slashes (/) or double quote marks (\")"
 
 const renderField = ({ input, label, type, meta: { touched, error, active, warning } }) => {
@@ -118,7 +118,14 @@ const FieldLevelValidationForm = (props) => {
         name="password"
         type="password"
         component={renderFieldWithAutoComplete2}
-        
+
+        label="Confirm password"
+      />
+      <Field
+        name="confirm_password"
+        type="password"
+        component={renderFieldWithAutoComplete2}
+
         label="Confirm password"
       />
       {/*<Field
