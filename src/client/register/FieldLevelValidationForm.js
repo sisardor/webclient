@@ -94,41 +94,35 @@ const FieldLevelValidationForm = (props) => {
         validate={[required, email]}
         warn={aol}
       />
-    {/*  <Field name="full_name" type="text"
+      <Field name="full_name" type="text"
         label="Full name"
         component={renderField}
         validate={[ required, maxLength15 ]}
       />
       <PasswordStrength/>
-      <Field
+      {/*<Field
         name="passwordx"
         type="password"
         component={renderFieldWithAutoComplete2}
         validate={[required, hasNumber, hasLetter, hasUpperLetter, isValidLength, oneSpecialChar, noSpecialChar]}
         label="Passwordx"
-      />*/}
+      />
       <Field
         name="password"
         type="password"
         component={renderFieldWithAutoComplete2}
 
         label="Confirm password"
-      />
-      <Field
-        name="confirm_password"
-        type="password"
-        component={renderFieldWithAutoComplete2}
+      />*/}
 
-        label="Confirm password"
-      />
-      {/*<Field
+      <Field
         name="confirm_password"
         type="password"
         component={renderFieldWithAutoComplete2}
         validate={match}
         label="Confirm password"
       />
-      <ReCAPTCHA
+      {/*<ReCAPTCHA
         sitekey="6LdM3zkUAAAAAJ3MkNFmbXPcVg47p_t"
         onChange={callback}
       />

@@ -20,19 +20,34 @@ class App extends Component {
     //<PasswordStrength/>
     //<FieldLevelValidationForm onSubmit={showResults} />
     //<NewComponent/>
+    var body = null
+    if (this.props.status && this.props.status === 'SUCCESS') {
+      body = <form><div className="email-sent-step step" style={{minHeight: 170}}>
+              <div className="title">
+                <h2>Registration successful!</h2>
+              </div>
+              <p className="message">
+                Please check your email for account activation link.
+              </p>
+            </div></form>
+    } else {
+      body = <div className="innter">
+        <div className="title extra">
+             <h2>Create your Nettok account.</h2>
+        </div>
+        <p className="message">Check your email</p>
+        <p className="danger-alert">{this.props.server_response}</p>
+        <FieldLevelValidationForm onSubmit={this.onFormSubmit.bind(this)} />
+      </div>
+    }
     return (
       <div className="login">
         <div id='header'>
           <h1>Nettok</h1>
         </div>
         <div id='main-body' className="box">
-          <div className="innter">
-            <div className="title extra">
-                 <h2>Create your Nettok account.</h2>
-            </div>
-            <p className="danger-alert">{this.props.server_response}</p>
-            <FieldLevelValidationForm onSubmit={this.onFormSubmit.bind(this)} />
-          </div>
+          {body}
+
         </div>
         <div id='footer'></div>
       </div>
@@ -114,7 +129,7 @@ class NewComponent extends Component {
 
 function mapStateToProps(state, ownProps) {
   console.log(state);
-  const { register: { error } } = state
+  const { register: { error, status } } = state
   let server_error = null
   if (error) {
     try {
@@ -124,10 +139,14 @@ function mapStateToProps(state, ownProps) {
       console.error(e);
     }
   }
+  // if (status === 'SUCCESS') {
+  //
+  // }
 
   console.log(server_error);
   return {
-    server_response: server_error
+    server_response: server_error,
+    status
   }
 }
 function mapDispatchToProps (dispatch) {

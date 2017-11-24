@@ -11,11 +11,11 @@ const actionHandlers = {
     return Object.assign({}, state, { isRequesting: true, error: null })
   },
   [constants.REGISTERATION_SUCCESS]: (state, action) => {
-    return Object.assign({}, state, { states: 'SUCCESS', error: null })
+    return Object.assign({}, state, { status: 'SUCCESS', error: null })
   },
   [constants.REGISTERATION_FAIL]: (state, action) => {
     console.log(action);
-    return Object.assign({}, state, { states: 'FAIL', error: action.error.error })
+    return Object.assign({}, state, { status: 'FAIL', error: action.error.error })
   }
 }
 
