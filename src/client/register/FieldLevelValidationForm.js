@@ -83,14 +83,7 @@ const Captcha = (props) => (
     sitekey="6LdM3zkUAAAAAJ3MkNFmbXPcVg47p_t-Yv8lW5I2"
   />
 );
-// const Captcha = (props) => (
-//   <div>
-//     <ReCAPTCHA
-//       sitekey={process.env.RECAPTCHA_SITE_KEY}
-//       onChange={props.input.onChange}
-//     />
-//     </div>
-// );
+
 const FieldLevelValidationForm = (props) => {
   const { handleSubmit, pristine, reset, submitting } = props
 

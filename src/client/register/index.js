@@ -11,11 +11,9 @@ require('isomorphic-fetch');
 
 class App extends Component {
   componentWillMount() {
-    console.log('api/Referrals');
     fetch('api/Referrals')
   }
   onFormSubmit(values) {
-    console.log(values);
     this.props.actions.registerUser({data: values})
   }
   render() {

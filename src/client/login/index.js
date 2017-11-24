@@ -47,7 +47,9 @@ class NewComponent extends Component {
               <input type="password" name="password" id="password" autoComplete="current-password" placeholder="Password"  />
             </span>
           </p>
-          <p className="forgot first-step"><a href="/reset"><span>Forgot your password?</span></a></p>
+          <p className="forgot first-step">
+            <Link to={`/reset`}><span>Forgot your password?</span></Link>
+          </p>
           <p className="remember">
             <label>
               <input type="checkbox" name="remember" defaultValue="on" /><span>Remember me</span>
