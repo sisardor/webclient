@@ -27,15 +27,16 @@ class App extends Component {
                 <h2>Registration successful!</h2>
               </div>
               <p className="message">
-                Please check your email for account activation link.
+                Thank you for signing up. Please check your email. Check your mailbox for an email confirmation letter and further instructions. Please note that the letter may be in the SPAM folder.
               </p>
-            </div></form>
+            </div>
+            </form>
     } else {
       body = <div className="innter">
         <div className="title extra">
              <h2>Create your Nettok account.</h2>
         </div>
-        <p className="message">Check your email</p>
+
         <p className="danger-alert">{this.props.server_response}</p>
         <FieldLevelValidationForm onSubmit={this.onFormSubmit.bind(this)} />
       </div>

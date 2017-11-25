@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { login } from '../../actions/authActions'
+import LoginForm from './LoginForm'
+
 import './index.css'
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
@@ -9,6 +14,10 @@ class App extends Component {
     console.log('api/Referrals');
     fetch('api/Referrals')
   }
+  onFormSubmit(values) {
+    console.log(values);
+    this.props.actions.login({data:values})
+  }
   render() {
     return (
       <div className="login">
@@ -17,12 +26,13 @@ class App extends Component {
         </div>
         <div id='main-body' className="box">
           <div className="innter">
-            <NewComponent/>
+            <h2><span>Welcome back!</span></h2>
+            {/*<NewComponent/>*/}
+            <LoginForm onSubmit={this.onFormSubmit.bind(this)}/>
           </div>
         </div>
         <div id='footer' className="box" >
           <Link to={`/register`}>Dont have an account? <span>Sign up</span></Link>
-
         </div>
       </div>
     );
@@ -38,7 +48,7 @@ class NewComponent extends Component {
           <p className="text">
             <span>
               <label htmlFor="email"><span>Email</span></label>
-              <input type="email" name="email" id="email" placeholder="Email" autoComplete="email"   />
+              <input type="email" name="email" placeholder="Email" autoComplete="email"   />
             </span>
           </p>
           <p className="text">
@@ -62,4 +72,20 @@ class NewComponent extends Component {
     );
   }
 }
-export default App;
+
+
+function mapStateToProps(state, ownProps) {
+
+  return {
+
+  }
+}
+function mapDispatchToProps (dispatch) {
+  return {
+    actions: bindActionCreators({
+      login
+    }, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

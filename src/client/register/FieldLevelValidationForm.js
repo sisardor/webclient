@@ -122,12 +122,8 @@ const FieldLevelValidationForm = (props) => {
         validate={match}
         label="Confirm password"
       />
-      {/*<ReCAPTCHA
-        sitekey="6LdM3zkUAAAAAJ3MkNFmbXPcVg47p_t"
-        onChange={callback}
-      />
 
-      <Field name='g-recaptcha-response' validate={required} component={Captcha}/>*/}
+      <Field name='g-recaptcha-response' validate={required} component={Captcha}/>
       <Field name="_csrf" type="hidden" component="input" />
 
       <div>
